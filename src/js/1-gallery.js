@@ -1,3 +1,6 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 const images = [
     {
       preview:
@@ -78,7 +81,6 @@ images.forEach(image => {
   const galleryImage = document.createElement('img');
   galleryImage.classList.add('gallery-image');
   galleryImage.src = image.preview;
-  galleryImage.setAttribute('data-source', image.original);
   galleryImage.alt = image.description;
 
   galleryLink.appendChild(galleryImage);
@@ -91,12 +93,11 @@ images.forEach(image => {
 galleryContainer.appendChild(fragment); 
 
 
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
+
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const gallery = new SimpleLightbox('.gallery a', {  captionsData: 'alt', 
+  const gallery = new SimpleLightbox('.gallery a', {   captionsData: 'alt', captionDelay: 250 
 });
 });
